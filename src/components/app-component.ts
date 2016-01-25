@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
-import {TodoInput} from './todo-input.component';
-import {TodoList} from './todo-list.component';
+
+import {TodoInput} from './todo-input-component';
+import {TodoList} from './todo-list-component';
 
 @Component({
     selector: 'app',

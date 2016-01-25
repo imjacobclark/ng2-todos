@@ -1,14 +1,15 @@
 import {Component} from 'angular2/core';
-import {TodoService} from './todo-service.service';
+import {TodoService} from '../services/todo-service';
+import {TodoItemRenderer} from './todo-item-renderer';
 
 @Component({
     selector: 'todo-list',
+    directives: [TodoItemRenderer],
     template: `
         <div>
             <ul>
                 <li *ngFor="#todo of todoService.todos">
-                    <span [hidden]="todo.status == 'completed'">{{todo.title}}</span>
-                    <button (click)="todo.toggle()">Toggle</button>
+                    <todo-item-renderer [todo]="todo"></todo-item-renderer>
                 </li>
             </ul>
         </div>
